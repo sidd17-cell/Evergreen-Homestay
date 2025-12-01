@@ -1,478 +1,605 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evergreen Homestay Kollengode </title>
-    <!-- Use Lora (Serif) for titles and Roboto (Sans-Serif) for body text for a modern, aesthetic look -->
+    <title>Evergreen Homestay | The Soul of Kollengode</title>
+    <!-- Fonts: Lora (Serif) for elegance, Roboto (Sans) for clarity -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Lora', 'serif'],
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'evergreen-dark': '#1a2e22', // Deep Forest Green
+                        'evergreen-light': '#2d4a36', // Lighter Green
+                        'cream': '#f4f1ea',           // Warm Background
+                        'gold': '#c5a059',            // Luxury Accent
+                        'terra': '#bc6c25'            // Earthy Accent
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f7f3f1;
-            color: #2c3e50;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Lora', serif;
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            display: block;
-            margin-top: 5px;
-            background: #d4a779;
-            transition: width .3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1a2e22; }
+        ::-webkit-scrollbar-thumb { background: #c5a059; border-radius: 3px; }
         
-        /* Custom scrollbar for a cleaner look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        /* Hero section fade-in animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        
-        /* Section fade-in on scroll */
-        .fade-in-section {
+        /* Smooth Reveal Animation Classes */
+        .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            transition-delay: 0.2s;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
         }
-        .fade-in-section.is-visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
+</head>
+<body class="bg-evergreen-dark text-cream antialiased selection:bg-gold selection:text-evergreen-dark">
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '566836586419502');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=566836586419502&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WZK84PVS');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B581RLP9QT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B581RLP9QT');
-</script>
-
-
-    <!-- Header & Navigation -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm shadow-md transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo/Brand Name -->
-            <a href="#hero" class="h-10 w-auto">
-                <img src="https://i.postimg.cc/tJwK7GSq/Logo-Final-FInal.png" alt="Sojourn Homestay Logo" class="h-full w-auto object-contain">
+    <!-- Floating Navigation (Glassmorphism) -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-serif font-bold tracking-widest text-white hover:text-gold transition-colors">
+                EVERGREEN HOMESTAY
             </a>
-            
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#hero" class="text-gray-600 hover:text-gray-900 nav-link">Home</a>
-                <a href="#why-choose-us" class="text-gray-600 hover:text-gray-900 nav-link">Why Choose Us?</a>
-                <a href="#virtual-tour" class="text-gray-600 hover:text-gray-900 nav-link">Virtual Tour</a>
-                <a href="#amenities" class="text-gray-600 hover:text-gray-900 nav-link">Amenities</a>
-                <a href="#about" class="text-gray-600 hover:text-gray-900 nav-link">About Us</a>
-                <a href="#location" class="text-gray-600 hover:text-gray-900 nav-link">Location</a>
-                <a href="#gallery" class="text-gray-600 hover:text-gray-900 nav-link">Gallery</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 nav-link">Contact</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#about" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Story</a>
+                <a href="#virtual-tour" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Gallery</a>
+                <a href="#amenities" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Comforts</a>
+                <a href="#guest-experience" class="text-sm uppercase tracking-widest hover:text-gold transition-colors">Experience</a>
+                <a href="#contact" class="px-6 py-2 border border-white/30 hover:border-gold hover:bg-gold hover:text-evergreen-dark transition-all text-sm uppercase tracking-widest rounded-full">
+                    Book Now
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
             </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-sm py-4">
-            <a href="#hero" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Home</a>
-            <a href="#why-choose-us" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Why Choose Us?</a>
-            <a href="#virtual-tour" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Virtual Tour</a>
-            <a href="#amenities" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Amenities</a>
-            <a href="#about" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">About Us</a>
-            <a href="#location" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Location</a>
-            <a href="#gallery" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Gallery</a>
-                <a href="#contact" class="block py-2 px-6 text-gray-600 hover:bg-gray-100">Contact</a>
-            </div>
-        </header>
-    
-        <main>
-            <!-- Hero Section -->
-            <section id="hero" class="relative w-full h-screen bg-cover bg-center flex items-center justify-center text-center" style="background-image: url('https://i.postimg.cc/tJJLk4Zt/Chat-GPT-Image-Aug-25-2025-11-27-28-AM.png');">
-                <div class="absolute inset-0 bg-black/60"></div>
-                <div class="relative z-10 p-4 md:p-8 animate-fadeIn">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wide">Your Home Away from Home in Kollengode</h1>
-                    <div class="text-center text-white mb-8">
-                        <p class="text-lg md:text-xl font-bold mb-2">Spacious 3-Bedroom AC Homestay with Attached Baths — Comfortably Hosting 8 Guests.</p>
-                        <p class="text-sm md:text-base font-medium">
-                            The Only 5★ Rated Homestay in Kollengode on Google.
-                            <i class="fab fa-google ml-2 text-xl align-middle"></i>
-                        </p>
-                    </div>
-                    <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                        <a href="#contact" class="px-8 py-3 bg-white text-gray-800 font-semibold rounded-full shadow-lg hover:bg-gray-200 transition-all duration-300 ease-in-out transform hover:scale-105">Get exclusive offers!</a>
-                        <a href="https://www.google.com/search?q=Evergreen+Homestay+Kollengode+reviews" target="_blank" class="px-8 py-3 font-semibold rounded-full shadow-lg hover:brightness-110 transition-all duration-300 ease-in-out transform hover:scale-105" style="background-color: #4285F4; color: white;">
-                            View on Google
-                        </a>
-                        <a href="tel:+917558077695" class="px-8 py-3 bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105">Call Now</a>
-                    </div>
-                </div>
-            </section>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-evergreen-dark/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center space-y-8 z-40">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-white text-3xl"><i class="fas fa-times"></i></button>
+            <a href="#about" class="text-2xl font-serif text-white hover:text-gold">Our Story</a>
+            <a href="#virtual-tour" class="text-2xl font-serif text-white hover:text-gold">Gallery</a>
+            <a href="#amenities" class="text-2xl font-serif text-white hover:text-gold">Comforts</a>
+            <a href="#guest-experience" class="text-2xl font-serif text-white hover:text-gold">The Experience</a>
+            <a href="#contact" class="text-2xl font-serif text-gold">Book Your Stay</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Immersive & Cinematic) -->
+    <header class="relative h-screen w-full overflow-hidden">
+        <!-- Background Image with Parallax-like fixed positioning -->
+        <div class="absolute inset-0">
+            <img src="https://i.postimg.cc/tJJLk4Zt/Chat-GPT-Image-Aug-25-2025-11-27-28-AM.png" alt="Kollengode Paddy Fields" class="w-full h-full object-cover object-center">
+            <!-- Gradient Overlay for text readability and mood -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-evergreen-dark"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 animate-fadeIn">
+            <p class="text-white font-bold text-sm md:text-base uppercase tracking-[0.3em] mb-6 bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full">Welcome to God's Own Country</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-medium text-white mb-6 leading-tight">
+                Your Home in <br/> <span class="italic text-white/90">Kollengode</span>
+            </h1>
+            <p class="max-w-2xl text-white/80 text-lg font-light mb-10">
+                Spacious 3-Bedroom AC Homestay with Attached Baths. <br class="hidden md:block">
+                The Only 5★ Rated Homestay in Kollengode on Google.
+            </p>
             
-            <!-- Unique Value Proposition Section -->
-            <section id="why-choose-us" class="py-12 md:py-16 bg-white fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Us?</h2>
-                    <p class="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
-                        Experience a unique blend of nature's tranquility and heartfelt hospitality.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
-                        <!-- Value Prop 1 -->
-                        <div class="p-6 bg-gray-100 rounded-3xl shadow-xl flex flex-col items-center justify-center">
-                            <i class="fas fa-mountain text-4xl text-gray-600 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Scenic Location</h3>
-                            <p class="text-gray-600">Nestled near the Western Ghats, offering a peaceful and serene atmosphere.</p>
-                        </div>
-                        <!-- Value Prop 2 -->
-                        <div class="p-6 bg-gray-100 rounded-3xl shadow-xl flex flex-col items-center justify-center">
-                            <i class="fas fa-house-user text-4xl text-gray-600 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Homely Comfort</h3>
-                            <p class="text-gray-600">Spacious rooms with a warm, family-run feel for a truly personal stay.</p>
-                        </div>
-                        <!-- Value Prop 3 -->
-                        <div class="p-6 bg-gray-100 rounded-3xl shadow-xl flex flex-col items-center justify-center">
-                            <i class="fas fa-dollar-sign text-4xl text-gray-600 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Affordable Luxury</h3>
-                            <p class="text-gray-600">Enjoy comfortable amenities without having to break your budget.</p>
-                        </div>
-                         <!-- New Value Prop 4 -->
-                        <div class="p-6 bg-gray-100 rounded-3xl shadow-xl flex flex-col items-center justify-center">
-                            <i class="fas fa-signal text-4xl text-gray-600 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Seamless Connectivity</h3>
-                            <p class="text-gray-600">Stay connected with WiFi, and enjoy easy access to parking and transport.</p>
-                        </div>
-                        <!-- New Value Prop 5 -->
-                        <div class="p-6 bg-gray-100 rounded-3xl shadow-xl flex flex-col items-center justify-center">
-                            <i class="fas fa-bed text-4xl text-gray-600 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Modern Comforts</h3>
-                            <p class="text-gray-600">Clean bathrooms, cozy beds, and essential amenities for a relaxing stay.</p>
-                        </div>
-                        <!-- New Value Prop 6 -->
-                        <div class="p-6 bg-gray-100 rounded-3xl shadow-xl flex flex-col items-center justify-center">
-                            <i class="fas fa-comment-dots text-4xl text-gray-600 mb-4"></i>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Easy Booking</h3>
-                            <p class="text-gray-600">Hassle-free reservations via WhatsApp or our convenient online form.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Virtual Tour Section -->
-            <section id="virtual-tour" class="py-12 md:py-16 bg-gray-100 fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Take a Virtual Tour</h2>
-                    <p class="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
-                        Explore the beauty and comfort of our homestay and its surroundings.
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-                        <img src="https://i.postimg.cc/3W5WQVH6/IMG-6925.jpg" alt="Tour 1" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <img src="https://i.postimg.cc/W1sgDFQy/IMG-6923.jpg" alt="Tour 2" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <img src="https://i.postimg.cc/XJ5p14RF/IMG-6921.jpg" alt="Tour 3" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <img src="https://i.postimg.cc/2SXyz1mh/IMG-6927.jpg" alt="Tour 4" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <img src="https://i.postimg.cc/761qThvB/Chat-GPT-Image-Jul-30-2025-10-30-21-AM.jpg" alt="Tour 5" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                        <img src="https://i.postimg.cc/tJJLk4Zt/Chat-GPT-Image-Aug-25-2025-11-27-28-AM.png" alt="Tour 6" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Amenities Section -->
-            <section id="amenities" class="py-12 md:py-16 bg-white fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Thoughtful Amenities for Your Comfort</h2>
-                    <div class="flex flex-wrap justify-center items-center gap-6">
-                        <!-- Amenity 1 -->
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-wifi text-xl text-gray-600"></i>
-                            <p class="text-gray-600">Free Wi-Fi</p>
-                        </div>
-                        <!-- Amenity 2 -->
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-temperature-low text-xl text-gray-600"></i>
-                            <p class="text-gray-600">Air-Conditioning</p>
-                        </div>
-                        <!-- Amenity 3 -->
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-kitchen-set text-xl text-gray-600"></i>
-                            <p class="text-gray-600">Kitchenette</p>
-                        </div>
-                        <!-- Amenity 4 -->
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-dog text-xl text-gray-600"></i>
-                            <p class="text-gray-600">Pet-Friendly</p>
-                        </div>
-                        <!-- Amenity 5 -->
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-users text-xl text-gray-600"></i>
-                            <p class="text-gray-600">Spacious & Private</p>
-                        </div>
-                        <!-- Amenity 6 -->
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-globe text-xl text-gray-600"></i>
-                            <p class="text-gray-600">Multilingual Staff</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <!-- About Us Section -->
-            <section id="about" class="py-12 md:py-16 bg-gray-100 fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center max-w-4xl">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Us</h2>
-                    <p class="text-gray-600 text-lg">
-                        Evergreen Homestay is a family-run property in Kollengode, Kerala. We believe in treating every guest as part of our family, offering not just a stay, but an experience of Kerala’s nature and culture.
-                    </p>
-                </div>
-            </section>
-    
-            <!-- Location Section - The core of the website -->
-            <section id="location" class="py-12 md:py-16 bg-white fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Embrace the Soul of <span class="text-blue-500">Kollengode</span>, <span class="text-amber-700">one of the most beautiful villages in India.</span></h2>
-                    <p class="text-gray-600 text-lg mb-8 max-w-3xl mx-auto">
-                        Our homestay's true luxury lies in its breathtaking location. Surrounded by the majestic hills and emerald paddy fields of Kollengode, every moment here is an immersion in authentic village life and pristine nature.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Location Feature 1 -->
-                        <div class="bg-gray-100 rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                            <img src="https://i.postimg.cc/wBKsVMvX/Chat-GPT-Image-Aug-25-2025-12-35-05-PM.png" alt="Kollengode Mountains" class="w-full h-48 object-cover rounded-2xl mb-4">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Mountain Vistas</h3>
-                            <p class="text-gray-600">Wake up to the sight of mist-covered mountains and the sound of birds, a true escape from the city.</p>
-                        </div>
-                        <!-- Location Feature 2 -->
-                        <div class="bg-gray-100 rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                            <img src="https://i.postimg.cc/3rnhCqR9/Chat-GPT-Image-Aug-25-2025-12-39-34-PM.png" alt="Kollengode Paddy Fields" class="w-full h-48 object-cover rounded-2xl mb-4">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Emerald Rice Paddies</h3>
-                            <p class="text-gray-600">Stroll through endless green fields, feeling the gentle breeze and soaking in the tranquil scenery.</p>
-                        </div>
-                        <!-- Location Feature 3 -->
-                        <div class="bg-gray-100 rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                            <img src="https://i.postimg.cc/Fz3DGz5w/Chat-GPT-Image-Aug-25-2025-12-46-29-PM.png" alt="Village Life" class="w-full h-48 object-cover rounded-2xl mb-4">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Authentic Village Charm</h3>
-                            <p class="text-gray-600">Experience the rhythms of local life, from traditional markets to the welcoming smiles of the community.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Gallery Section -->
-            <section id="gallery" class="py-12 md:py-16 bg-gray-100 fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Guest Experiences</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
-                        <img src="https://i.postimg.cc/QxMRhkDM/Whats-App-Image-2025-08-25-at-12-51-53-0c1f5eff.jpg" alt="Guest Experience Image" class="w-full h-full object-cover rounded-xl transform hover:scale-105 transition-transform duration-500 ease-in-out">
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Google Maps Section -->
-            <section class="py-12 md:py-16 bg-white fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Find Us on the Map</h2>
-                    <div class="relative overflow-hidden rounded-3xl shadow-xl" style="padding-top: 56.25%;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15652.887258045953!2d76.7766935745851!3d10.603348630325157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0730d173c3d52d%3A0x6d9f0a2f4c4a45a6!2sKollengode%2C%20Kerala%2C%20India!5e0!3m2!1sen!2sus!4v1628000000000!5m2!1sen!2sus" 
-                            class="absolute top-0 left-0 w-full h-full" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            title="Google Maps Location of Kollengode, Kerala"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </section>
-    
-            <!-- Contact Section -->
-            <section id="contact" class="py-12 md:py-16 bg-gray-100 fade-in-section">
-                <div class="container mx-auto px-6 lg:px-24 text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Plan Your Escape</h2>
-                    <p class="text-gray-600 text-lg mb-8 max-w-xl mx-auto">
-                        Ready to trade city life for serene landscapes? Reach out directly or send us an inquiry.
-                    </p>
-                    <!-- Direct Contact Buttons -->
-                    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mb-8">
-                        <!-- Call Button -->
-                        <a href="tel:+917558077695" class="w-full md:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 ease-in-out transform hover:scale-105">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>Call Now</span>
-                        </a>
-                        <!-- WhatsApp Button -->
-                        <a href="https://wa.me/917558077695" target="_blank" class="w-full md:w-auto flex items-center justify-center space-x-2 px-6 py-3 bg-[#25D366] text-white font-semibold rounded-full shadow-lg hover:bg-[#1DA951] transition-all duration-300 ease-in-out transform hover:scale-105">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Message on WhatsApp</span>
-                        </a>
-                    </div>
-                    <!-- Contact Form -->
-                    <div class="bg-white p-8 rounded-3xl shadow-xl max-w-md mx-auto">
-                        <form id="contact-form" onsubmit="event.preventDefault(); sendWhatsAppMessage();" class="space-y-6">
-                            <div>
-                                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-gray-400 transition-all duration-300" required>
-                            </div>
-                            <div>
-                                <input type="email" id="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-gray-400 transition-all duration-300" required>
-                            </div>
-                            <div>
-                                <textarea id="message" name="message" placeholder="Your Message or Booking Details" rows="4" class="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-gray-400 focus:border-gray-400 transition-all duration-300" required></textarea>
-                            </div>
-                            <button type="submit" class="w-full px-6 py-3 bg-[#25D366] text-white font-semibold rounded-full hover:bg-[#1DA951] transition-all duration-300 ease-in-out transform hover:scale-105">
-                                Send Inquiry on WhatsApp
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </main>
-    
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-12">
-            <div class="container mx-auto px-6 lg:px-24 text-center">
-                <p>© 2025 Evergreen Homestay. All Rights Reserved.</p>
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contact" class="px-8 py-4 bg-gold text-evergreen-dark font-medium uppercase tracking-wider hover:bg-white transition-all duration-300 min-w-[200px]">
+                    Get Exclusive Offers
+                </a>
+                <a href="tel:+917558077695" class="px-8 py-4 border border-white text-white font-medium uppercase tracking-wider hover:bg-white hover:text-evergreen-dark transition-all duration-300 min-w-[200px]">
+                    Call Now
+                </a>
             </div>
-        </footer>
-    
-        <script>
-            function sendWhatsAppMessage() {
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-                const phoneNumber = '+917558077695';
+            
+            <!-- Google Review Badge -->
+            <a href="https://www.google.com/search?q=Evergreen+Homestay+Kollengode+reviews" target="_blank" class="mt-8 flex items-center space-x-2 text-white/70 hover:text-white transition-colors">
+                <i class="fab fa-google"></i>
+                <span class="text-sm underline underline-offset-4">Read our 5-star reviews</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Why Choose Us (Clean, Minimalist Horizontal Layout) -->
+    <section id="why-choose-us" class="py-20 bg-evergreen-dark border-b border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left reveal">
+                <!-- Item 1 -->
+                <div class="group">
+                    <i class="fas fa-mountain text-3xl text-gold mb-4 group-hover:translate-y-[-5px] transition-transform duration-300"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Scenic Location</h3>
+                    <p class="text-white/60 font-light text-sm leading-relaxed">Nestled near the Western Ghats, offering a peaceful and serene atmosphere.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="group">
+                    <i class="fas fa-home text-3xl text-gold mb-4 group-hover:translate-y-[-5px] transition-transform duration-300"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Homely Comfort</h3>
+                    <p class="text-white/60 font-light text-sm leading-relaxed">Spacious rooms with a warm, family-run feel for a truly personal stay.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="group">
+                    <i class="fas fa-star text-3xl text-gold mb-4 group-hover:translate-y-[-5px] transition-transform duration-300"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Affordable Luxury</h3>
+                    <p class="text-white/60 font-light text-sm leading-relaxed">Enjoy comfortable amenities without having to break your budget.</p>
+                </div>
+            </div>
+            <!-- Additional Features Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left mt-12 reveal">
+                <div class="group">
+                    <i class="fas fa-wifi text-3xl text-gold mb-4 group-hover:translate-y-[-5px] transition-transform duration-300"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Seamless Connectivity</h3>
+                    <p class="text-white/60 font-light text-sm leading-relaxed">Stay connected with WiFi, and enjoy easy access to parking.</p>
+                </div>
+                <div class="group">
+                    <i class="fas fa-bed text-3xl text-gold mb-4 group-hover:translate-y-[-5px] transition-transform duration-300"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Modern Comforts</h3>
+                    <p class="text-white/60 font-light text-sm leading-relaxed">Clean bathrooms, cozy beds, and essential amenities for relaxing.</p>
+                </div>
+                <div class="group">
+                    <i class="fas fa-calendar-check text-3xl text-gold mb-4 group-hover:translate-y-[-5px] transition-transform duration-300"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Easy Booking</h3>
+                    <p class="text-white/60 font-light text-sm leading-relaxed">Hassle-free reservations via WhatsApp or online form.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us (Editorial Style Layout) -->
+    <section id="about" class="py-24 bg-cream text-evergreen-dark">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="w-full md:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold"></div>
+                        <img src="https://i.postimg.cc/3JZyJMLY/Untitled.png" alt="Evergreen Homestay Interior" class="w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-gold"></div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 reveal">
+                    <span class="text-gold uppercase tracking-[0.2em] text-sm font-medium">Our Story</span>
+                    <h2 class="text-4xl md:text-5xl font-serif mt-4 mb-8 leading-tight text-evergreen-dark">More than a stay, <br> a family experience.</h2>
+                    <p class="text-evergreen-light text-lg leading-relaxed mb-6 font-light">
+                        Evergreen Homestay is a family-run property in the heart of Kollengode, Kerala. We believe in treating every guest as part of our family, offering not just a stay, but an immersive experience of Kerala’s nature and culture.
+                    </p>
+                    <p class="text-evergreen-light text-lg leading-relaxed mb-8 font-light">
+                        Whether you are here for the mist-covered mountains or the endless paddy fields, we ensure your retreat is peaceful, personal, and unforgettable.
+                    </p>
+                    <img src="https://i.postimg.cc/tJwK7GSq/Logo-Final-FInal.png" alt="Signature" class="h-12 opacity-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tour (Full Width Scroll) -->
+    <section id="virtual-tour" class="py-24 bg-evergreen-dark text-cream">
+        <div class="container mx-auto px-6 mb-12 text-center reveal">
+            <span class="text-gold uppercase tracking-[0.2em] text-sm font-medium">Visual Journey</span>
+            <h2 class="text-4xl font-serif mt-3">Virtual Tour</h2>
+        </div>
+        
+        <!-- Aesthetic Grid -->
+        <div class="container mx-auto px-6 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="relative group overflow-hidden h-80">
+                    <img src="https://i.postimg.cc/3W5WQVH6/IMG-6925.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tour 1">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+                <!-- Image 2 -->
+                <div class="relative group overflow-hidden h-80">
+                    <img src="https://i.postimg.cc/W1sgDFQy/IMG-6923.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tour 2">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+                <!-- Image 3 -->
+                <div class="relative group overflow-hidden h-80">
+                    <img src="https://i.postimg.cc/XJ5p14RF/IMG-6921.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tour 3">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+                <!-- Image 4 -->
+                <div class="relative group overflow-hidden h-80">
+                    <img src="https://i.postimg.cc/2SXyz1mh/IMG-6927.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tour 4">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+                <!-- Image 5 -->
+                <div class="relative group overflow-hidden h-80">
+                    <img src="https://i.postimg.cc/761qThvB/Chat-GPT-Image-Jul-30-2025-10-30-21-AM.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tour 5">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+                <!-- Image 6 -->
+                <div class="relative group overflow-hidden h-80">
+                    <img src="https://i.postimg.cc/tJJLk4Zt/Chat-GPT-Image-Aug-25-2025-11-27-28-AM.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tour 6">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities (Minimalist List) -->
+    <section id="amenities" class="py-20 bg-cream text-evergreen-dark border-b border-evergreen-dark/10">
+        <div class="container mx-auto px-6 text-center reveal">
+            <span class="text-terra uppercase tracking-[0.2em] text-sm font-medium">Comforts</span>
+            <h2 class="text-3xl font-serif mt-3 mb-10">Thoughtful Amenities</h2>
+            
+            <div class="flex flex-wrap justify-center gap-x-12 gap-y-6">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-wifi text-terra"></i>
+                    <span class="font-light text-lg">Free High-Speed Wi-Fi</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-snowflake text-terra"></i>
+                    <span class="font-light text-lg">Air-Conditioning</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-utensils text-terra"></i>
+                    <span class="font-light text-lg">Fully Equipped Kitchenette</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-paw text-terra"></i>
+                    <span class="font-light text-lg">Pet-Friendly</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-user-friends text-terra"></i>
+                    <span class="font-light text-lg">Spacious Family Rooms</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-language text-terra"></i>
+                    <span class="font-light text-lg">Multilingual Staff</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section (Dark Mode Editorial) -->
+    <section id="location" class="py-24 bg-evergreen-dark text-cream relative overflow-hidden">
+        <!-- Decorative Background Element -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-gold uppercase tracking-[0.2em] text-sm font-medium">The Destination</span>
+                <h2 class="text-3xl md:text-5xl font-serif mt-4 leading-tight">
+                    Embrace the Soul of <span class="text-white">Kollengode</span>,<br>
+                    <span class="italic text-white/70 text-2xl md:text-4xl">one of the most beautiful villages in India.</span>
+                </h2>
+            </div>
+
+            <!-- Feature 1 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-20 reveal">
+                <div class="w-full md:w-1/2 order-2 md:order-1">
+                    <h3 class="text-3xl font-serif text-white mb-4">Mountain Vistas</h3>
+                    <p class="text-white/70 font-light leading-relaxed">
+                        Wake up to the majestic sight of the Western Ghats. The mist rolling over the peaks in the morning creates a surreal atmosphere that rejuvenates the soul.
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2 order-1 md:order-2">
+                    <img src="https://i.postimg.cc/wBKsVMvX/Chat-GPT-Image-Aug-25-2025-12-35-05-PM.png" alt="Mountain Views" class="w-full h-80 object-cover rounded-lg shadow-lg opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 mb-20 reveal">
+                <div class="w-full md:w-1/2">
+                    <img src="https://i.postimg.cc/3rnhCqR9/Chat-GPT-Image-Aug-25-2025-12-39-34-PM.png" alt="Paddy Fields" class="w-full h-80 object-cover rounded-lg shadow-lg opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-3xl font-serif text-white mb-4">Emerald Rice Paddies</h3>
+                    <p class="text-white/70 font-light leading-relaxed">
+                        Stroll through endless green fields that stretch to the horizon. Feel the gentle breeze and soak in the tranquil scenery that defines Kerala's beauty.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex flex-col md:flex-row items-center gap-12 reveal">
+                <div class="w-full md:w-1/2 order-2 md:order-1">
+                    <h3 class="text-3xl font-serif text-white mb-4">Authentic Village Charm</h3>
+                    <p class="text-white/70 font-light leading-relaxed">
+                        Experience the slow, rhythmic life of a traditional village. Visit local markets, meet friendly locals, and immerse yourself in a culture untouched by time.
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2 order-1 md:order-2">
+                    <img src="https://i.postimg.cc/Fz3DGz5w/Chat-GPT-Image-Aug-25-2025-12-46-29-PM.png" alt="Village Life" class="w-full h-80 object-cover rounded-lg shadow-lg opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Experience (Single Highlight) -->
+    <section id="guest-experience" class="py-24 bg-cream text-evergreen-dark">
+        <div class="container mx-auto px-6 text-center reveal">
+            <span class="text-terra uppercase tracking-[0.2em] text-sm font-medium">Moments</span>
+            <h2 class="text-4xl font-serif mt-3 mb-12">Guest Experiences</h2>
+            <div class="max-w-4xl mx-auto">
+                <img src="https://i.postimg.cc/QxMRhkDM/Whats-App-Image-2025-08-25-at-12-51-53-0c1f5eff.jpg" alt="Guest Moment" class="w-full h-auto shadow-2xl rounded-sm">
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Slider -->
+    <section id="reviews" class="py-24 bg-evergreen-dark text-cream overflow-hidden relative">
+        <!-- Background accent -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold/5 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center reveal">
+            <div class="mb-12">
+                <span class="text-gold uppercase tracking-[0.2em] text-sm font-medium">Testimonials</span>
+                <h2 class="text-3xl md:text-4xl font-serif mt-3">Loved by our Guests</h2>
+                <div class="flex justify-center items-center mt-4 space-x-2">
+                    <span class="text-xl font-bold">5.0</span>
+                    <div class="flex text-gold text-sm">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-sm text-white/60">on Google</span>
+                </div>
+            </div>
+
+            <!-- Slider Container -->
+            <div class="relative max-w-4xl mx-auto">
+                <div class="overflow-hidden" id="review-slider-container">
+                    <div class="flex transition-transform duration-700 ease-in-out" id="review-track">
+                        <!-- Review 1 (Arun Menon) -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl h-full flex flex-col justify-between hover:border-gold/30 transition-colors">
+                                <div>
+                                    <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-lg font-serif italic leading-relaxed mb-6">"We were a group of cyclists checking into a place after a long day of riding. Evergreen was just the right place to be in. Scenic location, greenery all around and the home itself was very comfortable. The host (Biju) is a perfect host. Thanks and hope to stay at Evergreen again and for a longer period."</p>
+                                </div>
+                                <div class="flex items-center justify-center space-x-3">
+                                    <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-xs">A</div>
+                                    <div class="text-left">
+                                        <p class="text-sm font-bold text-white">Arun Menon</p>
+                                        <p class="text-xs text-white/50">3 months ago</p>
+                                    </div>
+                                    <i class="fab fa-google text-white/20 ml-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 2 (Saju Stephen) -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl h-full flex flex-col justify-between hover:border-gold/30 transition-colors">
+                                <div>
+                                    <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-lg font-serif italic leading-relaxed mb-6">"We had a wonderful time...It was like a home away from home. Rooms were neat and clean... Spacious kitchen with cooking facilities... The host is so friendly and helpful..."</p>
+                                </div>
+                                <div class="flex items-center justify-center space-x-3">
+                                    <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-xs">S</div>
+                                    <div class="text-left">
+                                        <p class="text-sm font-bold text-white">Saju Stephen</p>
+                                        <p class="text-xs text-white/50">4 months ago</p>
+                                    </div>
+                                    <i class="fab fa-google text-white/20 ml-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 3 (Anna Bharati Hosoya) -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl h-full flex flex-col justify-between hover:border-gold/30 transition-colors">
+                                <div>
+                                    <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-lg font-serif italic leading-relaxed mb-6">"A secluded, cozy and hospitable place. The hosts are friendly and responsive. I enjoyed staying at Evergreen Homestay."</p>
+                                </div>
+                                <div class="flex items-center justify-center space-x-3">
+                                    <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-xs">A</div>
+                                    <div class="text-left">
+                                        <p class="text-sm font-bold text-white">Anna Bharati Hosoya</p>
+                                        <p class="text-xs text-white/50">10 months ago</p>
+                                    </div>
+                                    <i class="fab fa-google text-white/20 ml-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Review 4 (Davies V,A) -->
+                        <div class="w-full md:w-1/2 flex-shrink-0 px-4">
+                            <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-xl h-full flex flex-col justify-between hover:border-gold/30 transition-colors">
+                                <div>
+                                    <div class="flex text-gold mb-4"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                    <p class="text-lg font-serif italic leading-relaxed mb-6">"We had an one day stay at Evergreen Homestay. Actually, our Group of Five were the first Guests of Ever Green Homestay. We all really enjoyed the time there we spent. The rooms were very neat and clean. The approach and the hospitality of the management was really appreciable."</p>
+                                </div>
+                                <div class="flex items-center justify-center space-x-3">
+                                    <div class="w-8 h-8 bg-gold/20 rounded-full flex items-center justify-center text-gold font-bold text-xs">D</div>
+                                    <div class="text-left">
+                                        <p class="text-sm font-bold text-white">Davies V,A</p>
+                                        <p class="text-xs text-white/50">11 months ago</p>
+                                    </div>
+                                    <i class="fab fa-google text-white/20 ml-auto"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                const whatsappText = `Hello Evergreen Homestay,
-My name is ${name}.
-My email is ${email}.
-I have the following inquiry:
-${message}`;
-                
-                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
-                window.open(url, '_blank');
+                <!-- Slider Controls -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button id="prev-review" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:text-evergreen-dark hover:border-gold transition-all">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-review" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:text-evergreen-dark hover:border-gold transition-all">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="h-[500px] w-full relative grayscale hover:grayscale-0 transition-all duration-700">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15652.887258045953!2d76.7766935745851!3d10.603348630325157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0730d173c3d52d%3A0x6d9f0a2f4c4a45a6!2sKollengode%2C%20Kerala%2C%20India!5e0!3m2!1sen!2sus!4v1628000000000!5m2!1sen!2sus" 
+            class="absolute inset-0 w-full h-full border-0" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none shadow-[inset_0_0_50px_rgba(0,0,0,0.5)]"></div>
+    </section>
+
+    <!-- Contact Section (Elegant Form) -->
+    <section id="contact" class="py-24 bg-evergreen-dark text-cream relative">
+        <div class="container mx-auto px-6 max-w-2xl relative z-10">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-4xl font-serif mb-4 text-white">Plan Your Escape</h2>
+                <p class="text-white/60 font-light">Ready to trade city life for serene landscapes? Reach out directly.</p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-md p-10 rounded-2xl border border-white/10 shadow-2xl reveal">
+                <form id="contact-form" onsubmit="event.preventDefault(); sendWhatsAppMessage();" class="space-y-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold mb-2">Your Name</label>
+                        <input type="text" id="name" class="w-full bg-transparent border-b border-white/30 py-3 text-white focus:outline-none focus:border-gold transition-colors placeholder-white/20" placeholder="Enter your name" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold mb-2">Email Address</label>
+                        <input type="email" id="email" class="w-full bg-transparent border-b border-white/30 py-3 text-white focus:outline-none focus:border-gold transition-colors placeholder-white/20" placeholder="Enter your email" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-gold mb-2">Message</label>
+                        <textarea id="message" rows="3" class="w-full bg-transparent border-b border-white/30 py-3 text-white focus:outline-none focus:border-gold transition-colors placeholder-white/20" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-gold text-evergreen-dark font-bold uppercase tracking-widest hover:bg-white transition-colors mt-4">
+                        Send Inquiry on WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white/40 py-12 text-center text-xs uppercase tracking-widest">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2025 Evergreen Homestay. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function sendWhatsAppMessage() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const phoneNumber = '+917558077695';
+            
+            const whatsappText = `Hello Evergreen Homestay,\nMy name is ${name}.\nMy email is ${email}.\nI have the following inquiry:\n${message}`;
+            
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
+            window.open(url, '_blank');
+        }
+
+        // Review Slider Logic
+        const track = document.getElementById('review-track');
+        const nextBtn = document.getElementById('next-review');
+        const prevBtn = document.getElementById('prev-review');
+        let currentSlide = 0;
+        const totalSlides = 4; // Total number of reviews
+        
+        // Determine slides per view based on screen width (1 for mobile, 2 for desktop)
+        const getSlidesPerView = () => window.innerWidth >= 768 ? 2 : 1;
+        
+        const updateSlider = () => {
+            const slidesPerView = getSlidesPerView();
+            const maxIndex = Math.ceil(totalSlides / slidesPerView) - 1;
+            
+            // Loop logic
+            if (currentSlide > maxIndex) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = maxIndex;
+            
+            const translateX = -(currentSlide * 100); // 100% because we are shifting chunks
+            track.style.transform = `translateX(${translateX}%)`;
+        };
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide++;
+            updateSlider();
+            resetAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide--;
+            updateSlider();
+            resetAutoSlide();
+        });
+
+        // Auto Slide
+        let slideInterval = setInterval(() => {
+            currentSlide++;
+            updateSlider();
+        }, 5000);
+
+        const resetAutoSlide = () => {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                currentSlide++;
+                updateSlider();
+            }, 5000);
+        };
+
+        // Handle resize
+        window.addEventListener('resize', updateSlider);
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-evergreen-dark/90', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('py-6');
+                navbar.classList.add('py-4');
+            } else {
+                navbar.classList.remove('bg-evergreen-dark/90', 'backdrop-blur-md', 'shadow-lg', 'py-4');
+                navbar.classList.add('py-6');
             }
-            
-            document.addEventListener('DOMContentLoaded', () => {
-                // Mobile menu toggle
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener('click', () => {
-                        mobileMenu.classList.toggle('hidden');
-                    });
+        });
+
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Intersection Observer for Reveal on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
-    
-                // Smooth scroll for nav links
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                        // Hide mobile menu after clicking a link
-                        if (!mobileMenu.classList.contains('hidden')) {
-                             mobileMenu.classList.add('hidden');
-                        }
-                    });
-                });
-    
-                // Fade-in sections on scroll
-                const sections = document.querySelectorAll('.fade-in-section');
-                const observerOptions = {
-                    root: null,
-                    rootMargin: '0px',
-                    threshold: 0.2 // Trigger when 20% of the section is visible
-                };
-    
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            // Optional: Stop observing after it's visible once
-                            // observer.unobserve(entry.target);
-                        }
-                    });
-                }, observerOptions);
-    
-                sections.forEach(section => {
-                    observer.observe(section);
-                });
             });
-        </script>
+        }, { threshold: 0.1 });
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZK84PVS"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-    </body>
-    </html>
-    
-
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
